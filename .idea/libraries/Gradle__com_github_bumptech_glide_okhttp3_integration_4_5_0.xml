@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.bumptech.glide:okhttp3-integration-4.5.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/okhttp3-integration-4.5.0.aar/054c304ef904dd8c683bb8ec56f5f377/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/okhttp3-integration-4.5.0.aar/054c304ef904dd8c683bb8ec56f5f377/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/okhttp3-integration/4.5.0/2d267b2ba087179e8fc5415b0f0503bd7fb3d43c/okhttp3-integration-4.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

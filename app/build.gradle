@@ -64,6 +64,6 @@ dependencies {
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     compile 'org.litepal.android:core:1.6.1'
-//    implementation project(':sdkmanager')
+    implementation project(':sdkmanager')
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
 }
