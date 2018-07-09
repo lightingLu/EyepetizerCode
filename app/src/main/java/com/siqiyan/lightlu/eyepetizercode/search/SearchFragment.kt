@@ -1,6 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.search
 
-import com.siqiyan.lightlu.eyepetizercode.base.BaseFrament
+import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
 
 /**
  * 创建日期：2018/7/8 on 22:13
@@ -8,7 +8,7 @@ import com.siqiyan.lightlu.eyepetizercode.base.BaseFrament
  * @version 1.0
  * 类说明：
  */
-class SearchFragment :BaseFrament() {
+class SearchFragment :BaseFragment() {
     override fun initDate() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

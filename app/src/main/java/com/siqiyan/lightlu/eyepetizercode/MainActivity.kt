@@ -76,8 +76,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.rb_home ->{
                 rb_home.isChecked = true
                 rb_home.setTextColor(resources.getColor(R.color.black))
-                supportFragmentManager.beginTransaction().show(followFragment)
-                        .hide(homeFragment)
+                supportFragmentManager.beginTransaction().show(homeFragment)
+                        .hide(followFragment)
                         .hide(mineFragment)
                         .hide(notifyFragment)
                         .commit()

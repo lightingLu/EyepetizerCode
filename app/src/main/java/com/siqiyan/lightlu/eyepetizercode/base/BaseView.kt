@@ -7,5 +7,5 @@ package com.siqiyan.lightlu.eyepetizercode.base
  * 类说明：
  */
 interface BaseView<T>{
-    fun setPrsenter(prsenter: T)
+    fun setPresenter(prsenter: T)
 }
