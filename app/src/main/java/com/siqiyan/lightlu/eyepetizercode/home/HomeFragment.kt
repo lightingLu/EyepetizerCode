@@ -1,5 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.home
 
+import android.content.Intent
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
@@ -19,10 +20,13 @@ import com.siqiyan.lightlu.eyepetizercode.home.view.DiscoveryFragment
 import com.siqiyan.lightlu.eyepetizercode.home.view.FeedFragment
 import com.siqiyan.lightlu.eyepetizercode.home.view.RecommendFragment
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
+import com.siqiyan.lightlu.eyepetizercode.search.SearchActivity
+import com.siqiyan.lightlu.eyepetizercode.utils.ImageLoad
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.home_fragment.*
+import java.lang.ref.WeakReference
 
 /**
  * 创建日期：2018/7/8 on 22:13
@@ -59,7 +63,7 @@ class HomeFragment :BaseFragment(),CategoriesContract.CategoriesView ,ViewPager.
             currentIndex = entity.category_id.toString()
             RxBus.default!!.post(CurrentTagEvent(currentIndex, false))
         }
-
+       ImageLoad().clearCache(WeakReference(activity!!.applicationContext))
     }
 
     override fun initEvent() {
@@ -129,9 +133,9 @@ class HomeFragment :BaseFragment(),CategoriesContract.CategoriesView ,ViewPager.
 //            startActivity(intent)
         }
         iv_search.setOnClickListener {
-//            var intent = Intent(activity, SearchActivity::class.java)
-//            startActivity(intent)
-//            activity.overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_in_top)
+            var intent = Intent(activity, SearchActivity::class.java)
+            startActivity(intent)
+            activity!!.overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_in_top)
         }
     }
 
