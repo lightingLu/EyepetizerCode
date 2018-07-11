@@ -59,6 +59,7 @@ class HomeFragment :BaseFragment(),CategoriesContract.CategoriesView ,ViewPager.
             currentIndex = entity.category_id.toString()
             RxBus.default!!.post(CurrentTagEvent(currentIndex, false))
         }
+
     }
 
     override fun initEvent() {
