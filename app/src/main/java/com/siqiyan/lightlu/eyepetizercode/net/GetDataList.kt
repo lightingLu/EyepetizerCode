@@ -37,4 +37,13 @@ object GetDataList {
             }
 
 
+    fun allRec(page: Int, callBack: CallBack<Result>): Disposable = RetrofitUtils().with().build()
+            .allRec(page)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
+
+
 }
