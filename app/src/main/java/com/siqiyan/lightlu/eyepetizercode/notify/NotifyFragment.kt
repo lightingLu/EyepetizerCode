@@ -15,13 +15,13 @@ import kotlinx.android.synthetic.main.notify_fragment.*
  */
 class NotifyFragment :BaseFragment() {
     override fun initDate() =iv_search.setOnClickListener({
-        v ->  var intent =Intent(activity,SearchActivity::class.java)
+        var intent =Intent(activity,SearchActivity::class.java)
         startActivity(intent)
+        activity!!.overridePendingTransition(R.anim.slide_in_bottom,R.anim.slide_in_top)
     })
 
     override fun initView() {
         tv_bar_title.typeface = Typeface.createFromAsset(activity!!.assets, "fonts/Lobster-1.4.otf")
-
     }
 
 
