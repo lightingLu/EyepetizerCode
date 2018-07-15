@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.text.TextUtils
 import com.bumptech.glide.Glide
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
@@ -12,6 +13,8 @@ import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.MyMultiTypeAdapter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
 import com.siqiyan.lightlu.eyepetizercode.search.SearchActivity
+import com.siqiyan.lightlu.eyepetizercode.utils.UriUtils
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.follow_fragment.*
 
 /**
@@ -20,7 +23,42 @@ import kotlinx.android.synthetic.main.follow_fragment.*
  * @version 1.0
  * 类说明：
  */
-class FollowFragment :BaseFragment() {
+class FollowFragment :BaseFragment(),FollowContract.FollowView {
+    override fun onFollowSuc(result: Result) {
+        swipeRefreshLayout.finishLoadmore()
+        swipeRefreshLayout.finishRefresh()
+        swipeRefreshLayout.isLoadmoreFinished=result.itemList!!.isEmpty()
+        if (!TextUtils.isEmpty(result.nextPageUrl)){
+            start_num=UriUtils().parseCategoryUri(result.nextPageUrl.toString()).start
+            num = UriUtils().parseCategoryUri(result.nextPageUrl.toString()).num
+
+        }
+        if (result.itemList!!.isEmpty()) return
+        val start = adapter!!.itemCount
+        if (isRefresh) {
+            adapter!!.clearAll()
+            adapter!!.notifyItemRangeRemoved(0, start)
+            adapter!!.addAllData(result.itemList as java.util.ArrayList<Result.ItemList>?)
+            adapter!!.notifyItemRangeInserted(0, result.itemList!!.size)
+            start_num = 0
+            num = 10
+        } else {
+            adapter!!.addAllData(result.itemList as java.util.ArrayList<Result.ItemList>)
+            adapter!!.notifyItemRangeInserted(start, result.itemList!!.size)
+        }
+
+    }
+
+    override fun onFollowFail(e: Throwable?) {
+        swipeRefreshLayout.isLoadmoreFinished = false
+        swipeRefreshLayout.finishLoadmore()
+        swipeRefreshLayout.finishRefresh()
+    }
+
+    override fun setPresenter(prsenter2: FollowContract.FollowPresenter) {
+        this.presenter=prsenter2
+    }
+
     private var presenter: FollowContract.FollowPresenter? = null
     var adapter: MyMultiTypeAdapter? = null
     var isRefresh: Boolean = false
@@ -82,5 +120,18 @@ class FollowFragment :BaseFragment() {
     }
 
 
+    override fun initPresenter() {
+        FollowPresenter(this)
+    }
+
     override fun getLayoutId()= R.layout.follow_fragment
+
+    override fun onDestroyView() {
+        presenter = null
+        recyclerview.adapter = null
+        adapter = null
+        recyclerview.addOnScrollListener(null)
+        clearFindViewByIdCache()
+        super.onDestroyView()
+    }
 }

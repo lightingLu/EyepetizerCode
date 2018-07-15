@@ -17,7 +17,7 @@ class FollowPresenter(var followView: FollowContract.FollowView) :FollowContract
         followView.setPresenter(this)
     }
 
-    override fun follow(start: Int, num: Int, follow: Boolean, startId: Int): Disposable =
+    override fun followView(start: Int, num: Int, follow: Boolean, startId: Int): Disposable =
             GetDataList.follow(start, num, follow, startId, object : CallBack<Result> {
                 override fun onCompleted() = Unit
 

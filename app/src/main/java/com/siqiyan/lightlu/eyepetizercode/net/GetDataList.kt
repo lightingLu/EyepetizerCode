@@ -61,9 +61,13 @@ object GetDataList {
                     { throwable: Throwable -> callBack.onError(throwable) },
                     { callBack.onCompleted() })
 
-    fun follow(start: Int, num: Int, follow: Boolean, startId: Int, callBack: CallBack<Result>): Disposable {
-
-    }
+    fun follow(start: Int, num: Int, follow: Boolean, startId: Int, callBack: CallBack<Result>): Disposable = RetrofitUtils().with().build()
+            .follow(start, num, follow, startId)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
 
 
 }
