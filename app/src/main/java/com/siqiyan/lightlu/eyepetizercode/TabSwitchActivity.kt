@@ -2,8 +2,10 @@ package com.siqiyan.lightlu.eyepetizercode
 
 import com.siqiyan.lightlu.eyepetizercode.base.BaseActivity
 import com.siqiyan.lightlu.eyepetizercode.home.CategoriesContract
-import com.siqiyan.lightlu.eyepetizercode.home.CategoryContract
-import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
+import com.siqiyan.lightlu.eyepetizercode.home.adapter.TabSwitchAdapter
+import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesPresenter
+import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
+import java.util.ArrayList
 
 /**
  * 创建日期：2018/7/16 on 00:22
@@ -11,28 +13,34 @@ import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
  * @version 1.0
  * 类说明：
  */
-class TabSwitchActivity :BaseActivity(),CategoryContract.CategoryView {
+class TabSwitchActivity :BaseActivity(),CategoriesContract.CategoriesView {
+    override fun onCategoriesSucc(result: List<Categories>) {
+        adapter?.()
+        adapter?.addAll(result as ArrayList<Categories>)
+        adapter?.notifyDataSetChanged()
+    }
+
+    override fun onCategoriesFail(error: Throwable?) {
+    }
+
+    override fun setPresenter(prsenter: CategoriesContract.CategoriesPresenter) {
+        this.presenter=prsenter
+    }
+
     private var presenter: CategoriesContract.CategoriesPresenter? = null
     var adapter: TabSwitchAdapter? = null
     override fun initDate() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        presenter!!.categories()
     }
 
     override fun initView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getLayoutId(): Int =R.layout.tab_switch_activity
 
-    override fun onCategorySucc(result: Result) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    override fun initPresenter() {
+        CategoriesPresenter(this)
     }
 
-    override fun onCategoryFail(error: Throwable?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun setPresenter(prsenter: CategoryContract.CategoryPresenter) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 }

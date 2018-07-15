@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable
  * 类说明：
  */
 interface CategoryContract {
-    interface CategoryPresenter : BasePrsenter {
+    interface CategoryPresenter : BasePrsenter, CategoriesContract.CategoriesPresenter {
         fun category(id: Int, start: Int, num: Int): Disposable
     }
 
