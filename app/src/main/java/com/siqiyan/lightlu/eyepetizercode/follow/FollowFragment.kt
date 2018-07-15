@@ -68,6 +68,7 @@ class FollowFragment :BaseFragment(),FollowContract.FollowView {
     var startId: Int = 0
 
     override fun initDate() {
+        presenter!!.followView(startId,num,follow,startId)
     }
 
     override fun initView() {
