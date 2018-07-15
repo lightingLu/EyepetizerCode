@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager
 import android.view.View
 import android.widget.Toast
 import com.siqiyan.lightlu.eyepetizercode.R
+import com.siqiyan.lightlu.eyepetizercode.TabSwitchActivity
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
 import com.siqiyan.lightlu.eyepetizercode.event.ChangeTabEvent
 import com.siqiyan.lightlu.eyepetizercode.event.CurrentTagEvent
@@ -129,8 +130,8 @@ class HomeFragment :BaseFragment(),CategoriesContract.CategoriesView ,ViewPager.
         tv_bar_title.visibility = View.GONE
         tab_layout.visibility = View.VISIBLE
         iv_home.setOnClickListener {
-//            var intent = Intent(activity, TabSwitchActivity::class.java)
-//            startActivity(intent)
+            var intent = Intent(activity, TabSwitchActivity::class.java)
+            startActivity(intent)
         }
         iv_search.setOnClickListener {
             var intent = Intent(activity, SearchActivity::class.java)

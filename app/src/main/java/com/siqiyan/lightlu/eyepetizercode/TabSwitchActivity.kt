@@ -1,11 +1,15 @@
 package com.siqiyan.lightlu.eyepetizercode
 
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.helper.ItemTouchHelper
 import com.siqiyan.lightlu.eyepetizercode.base.BaseActivity
 import com.siqiyan.lightlu.eyepetizercode.home.CategoriesContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.TabSwitchAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
-import java.util.ArrayList
+import com.siqiyan.lightlu.eyepetizercode.utils.ItemTouchHelperCallback
+import kotlinx.android.synthetic.main.tab_switch_activity.*
+import java.util.*
 
 /**
  * 创建日期：2018/7/16 on 00:22
@@ -15,7 +19,7 @@ import java.util.ArrayList
  */
 class TabSwitchActivity :BaseActivity(),CategoriesContract.CategoriesView {
     override fun onCategoriesSucc(result: List<Categories>) {
-        adapter?.()
+        adapter?.clearAll()
         adapter?.addAll(result as ArrayList<Categories>)
         adapter?.notifyDataSetChanged()
     }
@@ -34,6 +38,18 @@ class TabSwitchActivity :BaseActivity(),CategoriesContract.CategoriesView {
     }
 
     override fun initView() {
+        back.setOnClickListener {
+            finish()
+        }
+        val list = ArrayList<Categories>()
+        val layoutManager = LinearLayoutManager(this.applicationContext)
+        recyclerview.layoutManager = layoutManager
+        adapter = TabSwitchAdapter(list)
+        recyclerview.adapter = adapter
+        var itemTouchHelperCallback = ItemTouchHelperCallback(adapter!!)
+        var itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+        itemTouchHelper.attachToRecyclerView(recyclerview)
+
     }
 
     override fun getLayoutId(): Int =R.layout.tab_switch_activity
