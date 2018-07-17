@@ -1,6 +1,7 @@
 package com.siqiyan.lightlu.eyepetizercode.search
 
 import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
 import android.text.TextUtils
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -77,8 +78,25 @@ class SearchActivity : BaseActivity() ,SearchContract.SearchHotView{
      * 搜索内容
      */
     private fun search(txt: String) {
+        fragment =SearchFragment.newInstance(txt)
+        addToActivity(R.id.fl_content, fragment!!)
+        fl_content.visibility = View.VISIBLE
+        rl_search.visibility = View.GONE
 
+    }
 
+    private fun addToActivity(fl_content: Int, fragment: SearchFragment) {
+        if (managers == null) {
+            managers = supportFragmentManager
+        }
+        var transaction: FragmentTransaction? = managers!!.beginTransaction()
+        if (transaction == null) {
+            transaction = managers!!.beginTransaction()
+        }
+        if (fragment != null) {
+            transaction!!.add(fl_content, fragment)
+            transaction.commitAllowingStateLoss()
+        }
 
     }
 
