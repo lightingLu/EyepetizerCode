@@ -79,6 +79,7 @@ class SearchActivity : BaseActivity() ,SearchContract.SearchHotView{
     private fun search(txt: String) {
 
 
+
     }
 
 

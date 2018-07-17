@@ -1,5 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.search
 
+import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
 
 /**
@@ -10,22 +11,16 @@ import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
  */
 class SearchFragment :BaseFragment() {
     override fun initDate() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initEvent() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initPresenter() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getLayoutId(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getLayoutId(): Int = R.layout.search_fragment
 }
