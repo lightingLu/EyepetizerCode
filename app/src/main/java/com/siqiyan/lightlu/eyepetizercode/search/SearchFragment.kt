@@ -10,6 +10,7 @@ import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
  * 类说明：
  */
 class SearchFragment :BaseFragment() {
+
     override fun initDate() {
     }
 
