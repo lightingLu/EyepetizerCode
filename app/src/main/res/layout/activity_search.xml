@@ -12,7 +12,7 @@
         android:visibility="visible">
 
 
-        <com.moment.eyepetizer.view.SearchView xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.siqiyan.lightlu.eyepetizercode.view.SearchView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -77,7 +77,7 @@
             android:textColor="@color/black"
             android:textSize="14sp" />
 
-        <com.moment.eyepetizer.view.FlowLayout
+        <com.siqiyan.lightlu.eyepetizercode.view.FlowLayout
             android:id="@+id/flow_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
