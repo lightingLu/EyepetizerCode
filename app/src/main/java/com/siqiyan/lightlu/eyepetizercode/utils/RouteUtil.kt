@@ -1,7 +1,9 @@
 package com.siqiyan.lightlu.eyepetizercode.utils
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
 import java.net.URLEncoder
 
 /**
@@ -34,28 +36,28 @@ fun parseUri(context: Context, url: String) {
     var uri: Uri = Uri.parse(url)
     var path = uri.host
     when (path) {
-//        "webview" -> {
-//            val title = uri.getQueryParameter("title")
-//            val url = uri.getQueryParameter("url")
-//            var intent = Intent(context, WebViewActivity::class.java)
-//            var bundle = Bundle()
-//            bundle.putString("urlBase64", encodeToString(url))
-//            bundle.putString("title", title)
-//            intent.putExtras(bundle)
-//            context.startActivity(intent)
-//        }
-//    //分类详情
-//        "category" -> {
-//            val path = uri.pathSegments[0]
-//            var intent = Intent(context, CategoriesTagListActivity::class.java)
-//            var bundle = Bundle()
-//            bundle.putInt("id", path.toInt())
-//            bundle.putString("title", uri.getQueryParameter("title"))
-//            if (uri.getQueryParameter("tabIndex") != null) {
-//                bundle.putInt("tabIndex", uri.getQueryParameter("tabIndex").toInt())
-//            }
-//            intent.putExtras(bundle)
-//            context.startActivity(intent)
+        "webview" -> {
+            val title = uri.getQueryParameter("title")
+            val url = uri.getQueryParameter("url")
+            var intent = Intent(context, WebViewActivity::class.java)
+            var bundle = Bundle()
+            bundle.putString("urlBase64", encodeToString(url))
+            bundle.putString("title", title)
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+        }
+    //分类详情
+        "category" -> {
+            val path = uri.pathSegments[0]
+            var intent = Intent(context, CategoriesTagListActivity::class.java)
+            var bundle = Bundle()
+            bundle.putInt("id", path.toInt())
+            bundle.putString("title", uri.getQueryParameter("title"))
+            if (uri.getQueryParameter("tabIndex") != null) {
+                bundle.putInt("tabIndex", uri.getQueryParameter("tabIndex").toInt())
+            }
+            intent.putExtras(bundle)
+            context.startActivity(intent)
 //        }
 //    //全部分类
 //        "categories" -> {

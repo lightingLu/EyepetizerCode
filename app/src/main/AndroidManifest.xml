@@ -52,12 +52,13 @@
             android:name=".MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name=".search.SearchActivity"/>
-
+        <activity android:name=".search.SearchActivity" />
         <activity
             android:name=".TabSwitchActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+        <activity android:name=".mine.WebActivity" />
+        <activity android:name=".home.CategoriesTagListActivity"></activity>
     </application>
 
 </manifest>
