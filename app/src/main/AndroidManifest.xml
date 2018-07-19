@@ -58,7 +58,8 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity android:name=".mine.WebActivity" />
-        <activity android:name=".home.CategoriesTagListActivity"></activity>
+        <activity android:name=".home.CategoriesTagListActivity" />
+        <activity android:name=".home.CategoriesAllActivity"></activity>
     </application>
 
 </manifest>

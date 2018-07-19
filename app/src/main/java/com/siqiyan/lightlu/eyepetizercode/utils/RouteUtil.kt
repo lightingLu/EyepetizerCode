@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import com.siqiyan.lightlu.eyepetizercode.home.CategoriesTagListActivity
 import java.net.URLEncoder
 
 /**
@@ -58,12 +59,12 @@ fun parseUri(context: Context, url: String) {
             }
             intent.putExtras(bundle)
             context.startActivity(intent)
-//        }
-//    //全部分类
-//        "categories" -> {
-//            var intent = Intent(context, CategoriesAllActivity::class.java)
-//            context.startActivity(intent)
-//        }
+        }
+//    全部分类
+        "categories" -> {
+            var intent = Intent(context, CategoriesAllActivity::class.java)
+            context.startActivity(intent)
+        }
 //    //排行榜
 //        "ranklist" -> {
 //            var intent = Intent(context, RankListActivity::class.java)
