@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import com.siqiyan.lightlu.eyepetizercode.R
 
 /**
- * 排行界面
+ * 全部排行界面
  */
 class RankListActivity : AppCompatActivity() {
 
