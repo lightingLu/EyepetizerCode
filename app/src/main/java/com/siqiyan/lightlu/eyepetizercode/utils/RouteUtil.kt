@@ -4,7 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import com.siqiyan.lightlu.eyepetizercode.home.CategoriesTagListActivity
+import android.widget.Toast
+import com.siqiyan.lightlu.eyepetizercode.event.ChangeTabEvent
+import com.siqiyan.lightlu.eyepetizercode.event.RxBus
+import com.siqiyan.lightlu.eyepetizercode.home.*
+import com.siqiyan.lightlu.eyepetizercode.mine.WebActivity
 import java.net.URLEncoder
 
 /**
@@ -40,7 +44,7 @@ fun parseUri(context: Context, url: String) {
         "webview" -> {
             val title = uri.getQueryParameter("title")
             val url = uri.getQueryParameter("url")
-            var intent = Intent(context, WebViewActivity::class.java)
+            var intent = Intent(context, WebActivity::class.java)
             var bundle = Bundle()
             bundle.putString("urlBase64", encodeToString(url))
             bundle.putString("title", title)
@@ -65,55 +69,55 @@ fun parseUri(context: Context, url: String) {
             var intent = Intent(context, CategoriesAllActivity::class.java)
             context.startActivity(intent)
         }
-//    //排行榜
-//        "ranklist" -> {
-//            var intent = Intent(context, RankListActivity::class.java)
-//            context.startActivity(intent)
-//        }
-//    //近期专题
-//        "campaign" -> {
-//            var intent = Intent(context, SpecialTopicsActivity::class.java)
-//            intent.putExtra("title", uri.getQueryParameter("title"))
-//            context.startActivity(intent)
-//        }
-//    //360全景视频
-//        "tag" -> {
-//            var intent = Intent(context, TagIndexActivity::class.java)
-//            var bundle = Bundle()
-//            var id = uri.pathSegments[0]
-//            bundle.putInt("id", id.toInt())
-//            bundle.putString("title", uri.getQueryParameter("title"))
-//            intent.putExtras(bundle)
-//            context.startActivity(intent)
-//        }
-//
-//    //近期话题
-//        "common" -> {
-//            var intent = Intent(context, DiscussListActivity::class.java)
-//            var bundle = Bundle()
-//            bundle.putString("url", uri.getQueryParameter("url"))
-//            bundle.putString("title", uri.getQueryParameter("title"))
-//            intent.putExtras(bundle)
-//            context.startActivity(intent)
-//        }
-//    //切换tab
-//        "feed" -> {
-//            var tabIndex = uri.getQueryParameter("tabIndex").toInt()
-//            RxBus.default!!.post(ChangeTabEvent(tabIndex))
-//        }
-//
-//        "video" -> {
-//            var intent = Intent(context, TagIndexActivity::class.java)
-//            var bundle = Bundle()
-//            bundle.putInt("id", uri.getQueryParameter("id").toInt())
-//            bundle.putString("title", uri.getQueryParameter("title"))
-//            bundle.putString("description", uri.getQueryParameter("description"))
-//            bundle.putString("bg", uri.getQueryParameter("bg"))
-//            intent.putExtras(bundle)
-//            context.startActivity(intent)
-//        }
-//        else -> {
-//            Toast.makeText(context, path, Toast.LENGTH_SHORT).show()
-//        }
+    //排行榜
+        "ranklist" -> {
+            var intent = Intent(context, RankListActivity::class.java)
+            context.startActivity(intent)
+        }
+    //近期专题
+        "campaign" -> {
+            var intent = Intent(context, SpecialTopicsActivity::class.java)
+            intent.putExtra("title", uri.getQueryParameter("title"))
+            context.startActivity(intent)
+        }
+    //360全景视频
+        "tag" -> {
+            var intent = Intent(context, TagIndexActivity::class.java)
+            var bundle = Bundle()
+            var id = uri.pathSegments[0]
+            bundle.putInt("id", id.toInt())
+            bundle.putString("title", uri.getQueryParameter("title"))
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+        }
+
+    //近期话题
+        "common" -> {
+            var intent = Intent(context, DiscussListActivity::class.java)
+            var bundle = Bundle()
+            bundle.putString("url", uri.getQueryParameter("url"))
+            bundle.putString("title", uri.getQueryParameter("title"))
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+        }
+    //切换tab
+        "feed" -> {
+            var tabIndex = uri.getQueryParameter("tabIndex").toInt()
+            RxBus.default!!.post(ChangeTabEvent(tabIndex))
+        }
+
+        "video" -> {
+            var intent = Intent(context, TagIndexActivity::class.java)
+            var bundle = Bundle()
+            bundle.putInt("id", uri.getQueryParameter("id").toInt())
+            bundle.putString("title", uri.getQueryParameter("title"))
+            bundle.putString("description", uri.getQueryParameter("description"))
+            bundle.putString("bg", uri.getQueryParameter("bg"))
+            intent.putExtras(bundle)
+            context.startActivity(intent)
+        }
+        else -> {
+            Toast.makeText(context, path, Toast.LENGTH_SHORT).show()
+        }
     }
 }
