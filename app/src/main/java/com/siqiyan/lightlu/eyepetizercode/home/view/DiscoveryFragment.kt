@@ -96,7 +96,7 @@ class DiscoveryFragment : BaseFragment(), DiscoverContract.DiscoverView {
 
     }
 
-    override fun getLayoutId() = R.layout.follow_fragment
+    override fun getLayoutId() = R.layout.discoverrsy_fragment
 
     override fun onDestroyView() {
         presenter = null

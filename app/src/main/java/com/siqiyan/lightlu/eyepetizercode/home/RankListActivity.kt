@@ -1,8 +1,12 @@
 package com.siqiyan.lightlu.eyepetizercode.home
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.siqiyan.lightlu.eyepetizercode.R
 
+/**
+ * 排行界面
+ */
 class RankListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

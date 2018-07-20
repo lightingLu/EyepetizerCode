@@ -1,7 +1,8 @@
 package com.siqiyan.lightlu.eyepetizercode.home
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.siqiyan.lightlu.eyepetizercode.R
 
 class CategoriesAllActivity : AppCompatActivity() {
 
