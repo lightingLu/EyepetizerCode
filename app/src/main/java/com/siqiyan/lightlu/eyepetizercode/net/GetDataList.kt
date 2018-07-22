@@ -2,6 +2,7 @@ package com.siqiyan.lightlu.eyepetizercode.net
 
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
 import com.siqiyan.lightlu.eyepetizercode.net.entity.CategoryInfo
+import com.siqiyan.lightlu.eyepetizercode.net.entity.RankList
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -110,6 +111,13 @@ object GetDataList {
                     { throwable: Throwable -> callBack.onError(throwable) },
                     { callBack.onCompleted() })
 
+    fun rankList(callBack: CallBack<RankList>): Disposable = RetrofitUtils().with().build()
+            .rankList()
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
 
 
 }
