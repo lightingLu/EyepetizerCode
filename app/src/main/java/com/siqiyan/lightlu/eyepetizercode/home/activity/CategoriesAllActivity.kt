@@ -6,6 +6,7 @@ import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseActivity
 import com.siqiyan.lightlu.eyepetizercode.home.CategoriesAllContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.CategoriesAllAdapter
+import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesAllPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
 import kotlinx.android.synthetic.main.activity_categories_all.*
 
@@ -75,5 +76,8 @@ class CategoriesAllActivity : BaseActivity() , CategoriesAllContract.CategoriesA
 
 
     override fun onBackPressed() = finish()
+    override fun initPresenter() {
+        CategoriesAllPresenter(this)
+    }
 
 }

@@ -38,10 +38,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:hardwareAccelerated="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:largeHeap="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/FullScreenView">
         <activity android:name=".ad.AdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,7 +60,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".TabSwitchActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
             android:name=".mine.WebActivity"
