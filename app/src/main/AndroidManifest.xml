@@ -58,12 +58,12 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity android:name=".mine.WebActivity" />
-        <activity android:name=".home.CategoriesTagListActivity" />
-        <activity android:name=".home.CategoriesAllActivity" />
-        <activity android:name=".home.RankListActivity" />
-        <activity android:name=".home.SpecialTopicsActivity" />
+        <activity android:name=".home.activity.CategoriesTagListActivity" />
+        <activity android:name=".home.activity.CategoriesAllActivity" />
+        <activity android:name=".home.activity.RankListActivity" />
+        <activity android:name=".home.activity.SpecialTopicsActivity" />
         <activity android:name=".home.TagIndexActivity" />
-        <activity android:name=".home.DiscussListActivity"></activity>
+        <activity android:name=".home.activity.DiscussListActivity"></activity>
     </application>
 
 </manifest>
