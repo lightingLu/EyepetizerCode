@@ -15,6 +15,14 @@ import io.reactivex.schedulers.Schedulers
  */
 object GetDataList {
 
+    fun categoriesTagList(path: String, map: HashMap<String, String>, callBack: CallBack<Result>): Disposable = RetrofitUtils().with().build()
+            .categoriesTagList(path, map)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
+
 
     fun categories(callBack: CallBack<List<Categories>>): Disposable = RetrofitUtils().with().build()
             .categories()
