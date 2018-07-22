@@ -38,9 +38,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:hardwareAccelerated="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/FullScreenView">
+        android:theme="@style/AppTheme">
         <activity android:name=".ad.AdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,18 +53,42 @@
             android:name=".MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name=".search.SearchActivity" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TabSwitchActivity"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name=".mine.WebActivity" />
-        <activity android:name=".home.activity.CategoriesTagListActivity" />
-        <activity android:name=".home.activity.CategoriesAllActivity" />
-        <activity android:name=".home.activity.RankListActivity" />
-        <activity android:name=".home.activity.SpecialTopicsActivity" />
-        <activity android:name=".home.TagIndexActivity" />
-        <activity android:name=".home.activity.DiscussListActivity"></activity>
+        <activity
+            android:name=".mine.WebActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.CategoriesTagListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.CategoriesAllActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.RankListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.SpecialTopicsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.TagIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.DiscussListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

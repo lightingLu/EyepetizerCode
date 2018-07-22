@@ -1,6 +1,5 @@
 package com.siqiyan.lightlu.eyepetizercode.home.presenter
 
-import com.bumptech.glide.Glide.init
 import com.siqiyan.lightlu.eyepetizercode.home.CategoriesAllContract
 import com.siqiyan.lightlu.eyepetizercode.net.CallBack
 import com.siqiyan.lightlu.eyepetizercode.net.GetDataList
