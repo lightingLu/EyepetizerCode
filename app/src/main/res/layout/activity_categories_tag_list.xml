@@ -93,7 +93,7 @@
         </android.support.design.widget.CollapsingToolbarLayout>
 
 
-        <com.moment.eyepetizer.view.TabLayout
+        <com.siqiyan.lightlu.eyepetizercode.view.TabLayout
             xmlns:tl="http://schemas.android.com/apk/res-auto"
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"

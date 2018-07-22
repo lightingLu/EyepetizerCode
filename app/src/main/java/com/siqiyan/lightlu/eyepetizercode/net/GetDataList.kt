@@ -1,6 +1,7 @@
 package com.siqiyan.lightlu.eyepetizercode.net
 
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
+import com.siqiyan.lightlu.eyepetizercode.net.entity.CategoryInfo
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -79,6 +80,14 @@ object GetDataList {
 
     fun search(start: Int, num: Int, search: String, callBack: CallBack<Result>): Disposable = RetrofitUtils().with().build()
             .search(search, start, num)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
+
+    fun categoriesDetail(id: Int, callBack: CallBack<CategoryInfo>): Disposable = RetrofitUtils().with().build()
+            .categoriesDetail(id)
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result -> callBack.onNext(result) },
