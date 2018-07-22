@@ -102,5 +102,14 @@ object GetDataList {
                     { throwable: Throwable -> callBack.onError(throwable) },
                     { callBack.onCompleted() })
 
+    fun categoriesAll(callBack: CallBack<Result>): Disposable = RetrofitUtils().with().build()
+            .categoriesAll()
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
+
+
 
 }
