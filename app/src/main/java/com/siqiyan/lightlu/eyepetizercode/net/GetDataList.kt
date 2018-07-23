@@ -120,4 +120,14 @@ object GetDataList {
                     { callBack.onCompleted() })
 
 
+    fun rankListVideo(path: String, map: HashMap<String, String>, callBack: CallBack<Result>): Disposable = RetrofitUtils().with().build()
+            .rankListVideo(path, map)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
+
+
+
 }
