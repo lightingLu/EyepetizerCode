@@ -3,7 +3,7 @@ package com.siqiyan.lightlu.eyepetizercode
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.helper.ItemTouchHelper
 import com.siqiyan.lightlu.eyepetizercode.base.BaseActivity
-import com.siqiyan.lightlu.eyepetizercode.home.CategoriesContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoriesContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.TabSwitchAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
@@ -17,7 +17,7 @@ import java.util.*
  * @version 1.0
  * 类说明：
  */
-class TabSwitchActivity :BaseActivity(),CategoriesContract.CategoriesView {
+class TabSwitchActivity :BaseActivity(), CategoriesContract.CategoriesView {
     override fun onCategoriesSucc(result: List<Categories>) {
         adapter?.clearAll()
         adapter?.addAll(result as ArrayList<Categories>)

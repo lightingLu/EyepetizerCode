@@ -9,7 +9,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
-import com.siqiyan.lightlu.eyepetizercode.home.FeedContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.FeedContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.MyMultiTypeAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.FeedPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.feed_fragment.*
  * @version 1.0
  * 类说明：
  */
-class FeedFragment : BaseFragment() ,FeedContract.FeedView{
+class FeedFragment : BaseFragment() , FeedContract.FeedView{
 
 
         private var presenter: FeedContract.FeedPresenter? = null

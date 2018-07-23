@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v4.view.PagerAdapter
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseActivity
-import com.siqiyan.lightlu.eyepetizercode.home.CategoriesDetailContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoriesDetailContract
 import com.siqiyan.lightlu.eyepetizercode.home.HomeFragment
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesDetailPresenter
 import com.siqiyan.lightlu.eyepetizercode.home.view.CategoryTagListFragment
@@ -21,7 +21,7 @@ import com.siqiyan.lightlu.eyepetizercode.utils.getScreenWidth
 import kotlinx.android.synthetic.main.activity_categories_tag_list.*
 import java.io.File
 
-class CategoriesTagListActivity : BaseActivity() ,CategoriesDetailContract.CategoriesDetailView{
+class CategoriesTagListActivity : BaseActivity() , CategoriesDetailContract.CategoriesDetailView{
     override fun onCategoriesDetailSucc(result: CategoryInfo) {
         val list = result.tabInfo!!.tabList
         tabInfo = result.tabInfo

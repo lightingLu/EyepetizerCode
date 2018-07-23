@@ -1,6 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.home.presenter
 
-import com.siqiyan.lightlu.eyepetizercode.home.DiscoverContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.DiscoverContract
 import com.siqiyan.lightlu.eyepetizercode.net.CallBack
 import com.siqiyan.lightlu.eyepetizercode.net.GetDataList
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable
  * @version 1.0
  * 类说明：
  */
-class DiscoverPresenter(var discoverView: DiscoverContract.DiscoverView):DiscoverContract.DiscoverPresenter {
+class DiscoverPresenter(var discoverView: DiscoverContract.DiscoverView): DiscoverContract.DiscoverPresenter {
     init {
         discoverView.setPresenter(this)
     }

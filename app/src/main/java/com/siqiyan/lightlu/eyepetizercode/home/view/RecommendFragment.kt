@@ -10,7 +10,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
-import com.siqiyan.lightlu.eyepetizercode.home.RecommendContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.RecommendContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.MyMultiTypeAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.RecommendPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.recommend_fragment.*
  * @version 1.0
  * 类说明：
  */
-class RecommendFragment : BaseFragment() ,RecommendContract.RecommendView{
+class RecommendFragment : BaseFragment() , RecommendContract.RecommendView{
         override fun onRecommendSucc(t: Result) {
                 swipeRefreshLayout.finishLoadmore()
                 swipeRefreshLayout.finishRefresh()

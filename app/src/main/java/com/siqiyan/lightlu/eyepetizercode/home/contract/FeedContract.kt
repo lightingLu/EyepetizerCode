@@ -1,4 +1,4 @@
-package com.siqiyan.lightlu.eyepetizercode.home
+package com.siqiyan.lightlu.eyepetizercode.home.contract
 
 import com.siqiyan.lightlu.eyepetizercode.base.BasePrsenter
 import com.siqiyan.lightlu.eyepetizercode.base.BaseView

@@ -12,7 +12,7 @@ import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
 import com.siqiyan.lightlu.eyepetizercode.event.CurrentTagEvent
 import com.siqiyan.lightlu.eyepetizercode.event.RxBus
-import com.siqiyan.lightlu.eyepetizercode.home.CategoryContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoryContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.MyMultiTypeAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoryPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.category_fragment.*
  * @version 1.0
  * 类说明：
  */
-class CategoryFragment(id:String): BaseFragment(),CategoryContract.CategoryView {
+class CategoryFragment(id:String): BaseFragment(), CategoryContract.CategoryView {
 
         private var presenter: CategoryContract.CategoryPresenter? = null
         var adapter: MyMultiTypeAdapter? = null

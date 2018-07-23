@@ -128,6 +128,13 @@ object GetDataList {
                     { throwable: Throwable -> callBack.onError(throwable) },
                     { callBack.onCompleted() })
 
+    fun specialTopics(start: Int, num: Int, callBack: CallBack<Result>): Disposable = RetrofitUtils().with().build()
+            .specialTopics(start, num)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
 
 
 }

@@ -4,7 +4,7 @@ import android.support.v7.widget.GridLayoutManager
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseActivity
-import com.siqiyan.lightlu.eyepetizercode.home.CategoriesAllContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoriesAllContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.CategoriesAllAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesAllPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result

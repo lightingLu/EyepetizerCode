@@ -11,7 +11,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
-import com.siqiyan.lightlu.eyepetizercode.home.RankListDetailContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.RankListDetailContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.MyMultiTypeAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.RankListDetailPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.ranklist_fragment.*
  * @version 1.0
  * 类说明：
  */
-class RankListFragment (path: String, map: HashMap<String, String>?) : BaseFragment(),RankListDetailContract.RankListView {
+class RankListFragment (path: String, map: HashMap<String, String>?) : BaseFragment(), RankListDetailContract.RankListView {
     private var presenter: RankListDetailContract.RankListPresenter? = null
     var adapter: MyMultiTypeAdapter? = null
     private var isRefresh: Boolean = false

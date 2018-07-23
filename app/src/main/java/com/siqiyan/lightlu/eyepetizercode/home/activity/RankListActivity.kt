@@ -9,7 +9,7 @@ import android.support.v4.view.PagerAdapter
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseActivity
 import com.siqiyan.lightlu.eyepetizercode.home.HomeFragment
-import com.siqiyan.lightlu.eyepetizercode.home.RankListContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.RankListContract
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.RankListPresenter
 import com.siqiyan.lightlu.eyepetizercode.home.view.RankListFragment
 import com.siqiyan.lightlu.eyepetizercode.net.entity.RankList

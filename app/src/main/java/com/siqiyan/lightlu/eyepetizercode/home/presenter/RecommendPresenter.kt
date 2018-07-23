@@ -1,6 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.home.presenter
 
-import com.siqiyan.lightlu.eyepetizercode.home.RecommendContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.RecommendContract
 import com.siqiyan.lightlu.eyepetizercode.net.CallBack
 import com.siqiyan.lightlu.eyepetizercode.net.GetDataList
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result

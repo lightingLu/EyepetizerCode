@@ -9,7 +9,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
-import com.siqiyan.lightlu.eyepetizercode.home.DiscoverContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.DiscoverContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.MyMultiTypeAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.DiscoverPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result

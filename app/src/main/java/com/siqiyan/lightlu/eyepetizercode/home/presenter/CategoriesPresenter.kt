@@ -1,6 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.home.presenter
 
-import com.siqiyan.lightlu.eyepetizercode.home.CategoriesContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoriesContract
 import com.siqiyan.lightlu.eyepetizercode.net.CallBack
 import com.siqiyan.lightlu.eyepetizercode.net.GetDataList
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable
  * @version 1.0
  * 类说明：
  */
-class CategoriesPresenter(var view:CategoriesContract.CategoriesView):CategoriesContract.CategoriesPresenter {
+class CategoriesPresenter(var view: CategoriesContract.CategoriesView): CategoriesContract.CategoriesPresenter {
     init {
         view.setPresenter(this)
     }

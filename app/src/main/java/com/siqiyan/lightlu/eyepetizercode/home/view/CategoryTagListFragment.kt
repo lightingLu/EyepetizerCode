@@ -11,7 +11,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.scwang.smartrefresh.layout.header.ClassicsHeader
 import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
-import com.siqiyan.lightlu.eyepetizercode.home.CategoryTabListContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoryTabListContract
 import com.siqiyan.lightlu.eyepetizercode.home.adapter.MyMultiTypeAdapter
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesTagListPresenter
 import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.categor_tag_fragment.*
  * @version 1.0
  * 类说明：
  */
-class CategoryTagListFragment(id: String, path: String):BaseFragment() ,CategoryTabListContract.CategoriesTagListView{
+class CategoryTagListFragment(id: String, path: String):BaseFragment() , CategoryTabListContract.CategoriesTagListView{
     private var presenter: CategoryTabListContract.CategoriesTagListPresenter? = null
     var adapter: MyMultiTypeAdapter? = null
     private var isRefresh: Boolean = false

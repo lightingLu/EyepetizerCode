@@ -1,6 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.home.presenter
 
-import com.siqiyan.lightlu.eyepetizercode.home.CategoriesDetailContract
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoriesDetailContract
 import com.siqiyan.lightlu.eyepetizercode.net.CallBack
 import com.siqiyan.lightlu.eyepetizercode.net.GetDataList
 import com.siqiyan.lightlu.eyepetizercode.net.entity.CategoryInfo
@@ -12,7 +12,7 @@ import io.reactivex.disposables.Disposable
  * @version 1.0
  * 类说明：
  */
-class CategoriesDetailPresenter(var view: CategoriesDetailContract.CategoriesDetailView):CategoriesDetailContract.CategoriesDetailPresenter {
+class CategoriesDetailPresenter(var view: CategoriesDetailContract.CategoriesDetailView): CategoriesDetailContract.CategoriesDetailPresenter {
     override fun categoriesDetail(id: Int): Disposable =
             GetDataList.categoriesDetail(id, object : CallBack<CategoryInfo> {
                 override fun onCompleted() = Unit

@@ -15,6 +15,7 @@ import com.siqiyan.lightlu.eyepetizercode.event.ChangeTabEvent
 import com.siqiyan.lightlu.eyepetizercode.event.CurrentTagEvent
 import com.siqiyan.lightlu.eyepetizercode.event.RefreshEvent
 import com.siqiyan.lightlu.eyepetizercode.event.RxBus
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoriesContract
 import com.siqiyan.lightlu.eyepetizercode.home.presenter.CategoriesPresenter
 import com.siqiyan.lightlu.eyepetizercode.home.view.CategoryFragment
 import com.siqiyan.lightlu.eyepetizercode.home.view.DiscoveryFragment
@@ -35,7 +36,7 @@ import java.lang.ref.WeakReference
  * @version 1.0
  * 类说明：
  */
-class HomeFragment :BaseFragment(),CategoriesContract.CategoriesView ,ViewPager.OnPageChangeListener{
+class HomeFragment :BaseFragment(), CategoriesContract.CategoriesView ,ViewPager.OnPageChangeListener{
 
     private var mFragments = ArrayList<Fragment>()
     var tabId: Long = 10001
