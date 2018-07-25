@@ -133,9 +133,13 @@ object GetDataList {
                     { throwable: Throwable -> callBack.onError(throwable) },
                     { callBack.onCompleted() })
 
-    fun tagIndex(id: Int, callBack: CallBack<TagIndex>): Disposable {
-
-    }
+    fun tagIndex(id: Int, callBack: CallBack<TagIndex>): Disposable = RetrofitUtils().with().build()
+            .tagIndex(id)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ result -> callBack.onNext(result) },
+                    { throwable: Throwable -> callBack.onError(throwable) },
+                    { callBack.onCompleted() })
 
 
 }

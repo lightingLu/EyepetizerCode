@@ -1,5 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.home.contract
 
+import com.siqiyan.lightlu.eyepetizercode.base.BasePrsenter
 import com.siqiyan.lightlu.eyepetizercode.base.BaseView
 import com.siqiyan.lightlu.eyepetizercode.net.entity.TagIndex
 import io.reactivex.disposables.Disposable
@@ -11,7 +12,7 @@ import io.reactivex.disposables.Disposable
  * 类说明：
  */
 class TagIndexContract {
-    interface TagIndexPresenter : BasePresenter {
+    interface TagIndexPresenter : BasePrsenter {
         fun tagIndex(id: Int): Disposable
     }
 
