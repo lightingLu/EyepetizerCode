@@ -1,7 +1,10 @@
 package com.siqiyan.lightlu.eyepetizercode.home.view
 
 import android.annotation.SuppressLint
+import com.siqiyan.lightlu.eyepetizercode.R
 import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
+import com.siqiyan.lightlu.eyepetizercode.home.contract.CategoryTabListContract
+import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
 
 @SuppressLint("ValidFragment")
 /**
@@ -10,16 +13,23 @@ import com.siqiyan.lightlu.eyepetizercode.base.BaseFragment
  * @version 1.0
  * 类说明：
  */
-class TagIndexFragment (id: String, path: String) : BaseFragment(){
+class TagIndexFragment (id: String, path: String) : BaseFragment(), CategoryTabListContract.CategoriesTagListView {
+
+
+    override fun onCategoriesTagSucc(result: Result) {
+    }
+
+    override fun onCategoriesTagFail(error: Throwable?) {
+    }
+
+    override fun setPresenter(prsenter: CategoryTabListContract.CategoriesTagListPresenter) {
+    }
+
     override fun initDate() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+  }
 
-    override fun getLayoutId(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getLayoutId(): Int = R.layout.tagindex_fragment
 }
