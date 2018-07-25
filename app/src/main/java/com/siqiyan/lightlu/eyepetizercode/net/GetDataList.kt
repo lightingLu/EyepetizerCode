@@ -1,9 +1,6 @@
 package com.siqiyan.lightlu.eyepetizercode.net
 
-import com.siqiyan.lightlu.eyepetizercode.net.entity.Categories
-import com.siqiyan.lightlu.eyepetizercode.net.entity.CategoryInfo
-import com.siqiyan.lightlu.eyepetizercode.net.entity.RankList
-import com.siqiyan.lightlu.eyepetizercode.net.entity.Result
+import com.siqiyan.lightlu.eyepetizercode.net.entity.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -135,6 +132,10 @@ object GetDataList {
             .subscribe({ result -> callBack.onNext(result) },
                     { throwable: Throwable -> callBack.onError(throwable) },
                     { callBack.onCompleted() })
+
+    fun tagIndex(id: Int, callBack: CallBack<TagIndex>): Disposable {
+
+    }
 
 
 }
