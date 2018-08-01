@@ -12,6 +12,8 @@ import io.reactivex.disposables.Disposable
  * 类说明：
  */
 class TagIndexContract {
+
+
     interface TagIndexPresenter : BasePrsenter {
         fun tagIndex(id: Int): Disposable
     }
